@@ -1,7 +1,6 @@
 ### RETFound OAG - RETFound Open Access Glaucoma ###
 
 This is a adapted version of RETFound (including weights) for the purpose of glaucoma detection from colour fundus photos (CFP)
-Also included are RETFound versions that assess CFP image quality from the perspective glaucoma disc assessment, and image laterality assessment
 
 Please see the official RETFound GitHub for installation instructions:
 - https://github.com/rmaphoh/RETFound
