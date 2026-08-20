@@ -1,4 +1,4 @@
-### RETFound OAG - RETFound Open Access Glaucoma ###
+# RETFound OAG - RETFound Open Access Glaucoma #
 
 This is a adapted version of RETFound (including weights) for the purpose of glaucoma detection from colour fundus photos (CFP)
 
