@@ -1,4 +1,4 @@
-# RETFound OAG - RETFound Open Access Glaucoma #
+## RETFound OAG - RETFound Open Access Glaucoma ##
 
 This is a adapted version of RETFound (including weights) for the purpose of glaucoma detection from colour fundus photos (CFP)
 
@@ -22,9 +22,9 @@ Please see the official RETFound GitHub for installation instructions:
 You are recommended to first process your raw images through AutoMorph https://github.com/rmaphoh/AutoMorph using the processing module only.
 Once completed, retrieve your processed images from AutoMorph/Results/M0/images and put them in an image folder inside /RETFound-Open-Access-Glaucoma
 
-# Pipeline
+## Pipeline
 
-## Prerequisites
+### Prerequisites
 
 - System with a CUDA-enabled GPU
 - [Anaconda](https://www.anaconda.com/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) installed
@@ -35,14 +35,14 @@ Once completed, retrieve your processed images from AutoMorph/Results/M0/images 
 
 ### 🔧 Install environment
 
-## Step 1: Create environment with conda:
+### Step 1: Create environment with conda:
 
 ```
 conda create -n retfoundOAG python=3.11.0 -y
 conda activate retfoundOAG
 ```
 
-## Step 2: Install dependencies
+### Step 2: Install dependencies
 
 ```
 pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ```
 
 
-## Step 3: Crop Gradable Images Around the Optic Disc
+### Step 3: Crop Gradable Images Around the Optic Disc
 
 ### 1. Environment Setup
 Create and activate a dedicated environment for the cropping tool:
@@ -82,7 +82,7 @@ conda deactivate
 
 ---
 
-## Step 4: Generate Disease Predictions
+### Step 4: Generate Disease Predictions
 
 ### 1. Environment Setup
 Reactivate the RETFound environment:
