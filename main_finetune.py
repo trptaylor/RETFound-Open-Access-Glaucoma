@@ -132,6 +132,10 @@ def get_args_parser():
     parser.add_argument("--enhance", action="store_true", default=False)
     parser.add_argument("--datasets_seed", default=2026, type=int)
 
+    # ---- Predict Mode
+    parser.add_argument("--predict", action="store_true",
+                    help="Predict labels for a folder without ground truth")
+
     return parser
 
 
@@ -226,10 +230,28 @@ def main(args, criterion):
         if hasattr(model, "head") and hasattr(model.head, "weight"):
             trunc_normal_(model.head.weight, std=2e-5)
 
-    # ---- Datasets & samplers
-    dataset_train = build_dataset(is_train="train", args=args)
-    dataset_val   = build_dataset(is_train="val",   args=args)
-    dataset_test  = build_dataset(is_train="test",  args=args)
+# ---- Datasets & samplers
+    if args.predict:
+        from util.folder_dataset import FolderDataset
+        from torchvision import transforms
+
+        transform = transforms.Compose([
+            transforms.Resize((args.input_size, args.input_size)),
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean=(0.485, 0.456, 0.406),
+                std=(0.229, 0.224, 0.225),
+            ),
+        ])
+
+        dataset_test = FolderDataset(args.data_path, transform=transform)
+
+        dataset_train = None
+        dataset_val = None
+    else:
+        dataset_train = build_dataset(is_train="train", args=args)
+        dataset_val   = build_dataset(is_train="val",   args=args)
+        dataset_test  = build_dataset(is_train="test",  args=args)
 
     num_tasks   = misc.get_world_size()
     global_rank = misc.get_rank()

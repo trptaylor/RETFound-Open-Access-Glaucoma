@@ -5,10 +5,19 @@ from torchvision import datasets, transforms
 from timm.data import create_transform
 from timm.data.constants import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 
+class ImageFolderWithPaths(datasets.ImageFolder):
+    """ImageFolder that also returns image file names."""
+
+    def __getitem__(self, index):
+        image, target = super().__getitem__(index)
+        path, _ = self.samples[index]
+        image_name = os.path.basename(path)
+        return image, image_name, target
+
 def build_dataset(is_train, args):
     transform = build_transform(is_train, args)
     root = os.path.join(args.data_path, is_train)
-    dataset = datasets.ImageFolder(root, transform=transform)
+    dataset = ImageFolderWithPaths(root, transform=transform)
 
     if is_train == 'train':
         ratio = float(getattr(args, "dataratio", 1.0))
