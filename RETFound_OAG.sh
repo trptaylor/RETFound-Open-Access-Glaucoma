@@ -10,7 +10,7 @@ DATA_PATH="/path/to/your/image/folder"
 TASK="RETFound_OAG"
 
 # ==== Checkpoint ====
-CKPT="/path/to/your/folder/RETFound_OAG/checkpoints/RETFound OAG/RETFound OAG.pth"
+CKPT="/path/to/your/folder/RETFound-Open-Access-Glaucoma/checkpoints/RETFound OAG/RETFound OAG.pth"
 
 # ==== Prediction run ====
 torchrun --nproc_per_node=1 --master_port=48766 main_finetune.py \
