@@ -5,11 +5,11 @@ ADAPTATION="finetune"
 NUM_CLASS=2
 
 # ==== Data/settings ====
-DATA_PATH="/home/tom/Project/Tom_RETFound/rfoagtrial/RETFound-Open-Access-Glaucoma/cropped"
+DATA_PATH="path/to/your/cropped/images"
 TASK="RETFound_OAG"
 
 # ==== Checkpoint ====
-CKPT="/home/tom/Project/Tom_RETFound/rfoagtrial/RETFound-Open-Access-Glaucoma/RETFound.OAG.pth"
+CKPT="/path/to/your/downloaded/checkpoint/RETFound.OAG.pth"
 
 # ==== Prediction run ====
 python -m torch.distributed.run --nproc_per_node=1 --master_port=48766 main_finetune.py \
