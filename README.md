@@ -2,7 +2,9 @@
 
 This is a adapted version of RETFound (including weights) for the purpose of glaucoma detection from colour fundus photos (CFP)
 
-Please see the official RETFound GitHub for installation instructions:
+It was fine-tuned using open access glaucoma images available online. Full details of the fine-tuning recipe will be made available in a forthcoming paper.
+
+Please see the official RETFound GitHub for more information:
 - https://github.com/rmaphoh/RETFound
 - With thanks to Yukun Zhou
 
