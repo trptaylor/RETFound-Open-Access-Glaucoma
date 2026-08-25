@@ -1,4 +1,3 @@
-
 # ==== Model/settings ====
 MODEL="RETFound_dinov2"
 MODEL_ARCH="retfound_dinov2"
@@ -6,14 +5,14 @@ ADAPTATION="finetune"
 NUM_CLASS=2
 
 # ==== Data/settings ====
-DATA_PATH="/path/to/your/image/folder"
+DATA_PATH="/home/tom/Project/Tom_RETFound/rfoagtrial/RETFound-Open-Access-Glaucoma/cropped"
 TASK="RETFound_OAG"
 
 # ==== Checkpoint ====
-CKPT="/path/to/your/folder/RETFound-Open-Access-Glaucoma/checkpoints/RETFound OAG/RETFound OAG.pth"
+CKPT="/home/tom/Project/Tom_RETFound/rfoagtrial/RETFound-Open-Access-Glaucoma/RETFound.OAG.pth"
 
 # ==== Prediction run ====
-torchrun --nproc_per_node=1 --master_port=48766 main_finetune.py \
+python -m torch.distributed.run --nproc_per_node=1 --master_port=48766 main_finetune.py \
   --model "$MODEL" \
   --model_arch "$MODEL_ARCH" \
   --global_pool \
