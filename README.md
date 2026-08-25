@@ -56,6 +56,9 @@ pip install -r requirements.txt
 
 ### Step 3: Crop Gradable Images Around the Optic Disc
 
+With thanks to https://github.com/berenslab/fundus_image_toolbox
+Gervelmeyer et al., (2025). Fundus Image Toolbox: A Python package for fundus image processing. Journal of Open Source Software, 10(108), 7101, https://doi.org/10.21105/joss.07101
+
 ### 1. Environment Setup
 Create and activate a dedicated environment for the cropping tool:
 
@@ -70,8 +73,8 @@ pip install fundus_image_toolbox
 Navigate to the `RETFound-Open-Access-Glaucoma` root directory and open `crop_script.py`. Under `# 3. Setup Paths`, update the following variables:
 
 ```python
-input_dir = Path("/path/to/your/images")
-out_dir = Path("/path/to/your/cropped_images")
+input_dir = Path("/path/to/your/input_images")
+out_dir = Path("/path/to/your/new_cropped_images")
 ```
 
 ### 3. Run Cropping
