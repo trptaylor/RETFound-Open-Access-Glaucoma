@@ -16,8 +16,8 @@ print(f"Running on: {device}")
 model, config = fit.load_fovea_od_model(device=device)
 
 # 3. Setup Paths
-input_dir = Path("/path/to/your/PROCESSED_images")
-output_dir = Path("/path/to/your/cropped_PROCESSED_images")
+input_dir = Path("/path/to/your/input_images")
+output_dir = Path("/path/to/your/new_cropped_images")
 output_dir.mkdir(exist_ok=True, parents=True)
 
 image_paths = sorted(
