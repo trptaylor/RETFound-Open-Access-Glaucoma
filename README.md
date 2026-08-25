@@ -91,22 +91,29 @@ Reactivate the RETFound environment:
 conda activate retfoundOAG
 ```
 
-### 2. Configure Execution Script
+### 2. Download Weights
+Save the weights into your RETFound-Open-Access-Glaucoma` directory
+
+```bash
+wget https://github.com/trptaylor/RETFound-Open-Access-Glaucoma/releases/download/v1.0.0/RETFound.OAG.pth
+```
+
+### 3. Configure Execution Script
 Open `RETFound_OAG.sh` in the `RETFound-Open-Access-Glaucoma` directory and update the target paths:
 
 ```bash
 DATA_PATH="/path/to/your/cropped_images"
-CKPT="/path/to/your/checkpoints/RETFound OAG.pth"
+CKPT="/path/to/your/checkpoint/RETFound OAG.pth"
 ```
 
-### 3. Run Inference
+### 4. Run Inference
 From the `RETFound-Open-Access-Glaucoma` folder, run:
 
 ```bash
 sh RETFound_OAG.sh
 ```
 
-### 4. Outputs
+### 5. Outputs
 Predictions will be saved to:
 
 ```text
